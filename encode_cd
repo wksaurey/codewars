@@ -1,0 +1,18 @@
+def encode_cd(n):
+    b = format(n, '08b')
+    result = 'P'
+    for d in reversed(b):
+        if d == '1': 
+            # swap letters
+            if result[len(result)-1] == 'P': result = result + "L"
+            else: result = result + "P"
+        else:
+            # return same as last letter
+            result = result + result[len(result)-1]
+    print(result)
+    return result
+
+encode_cd(5)
+encode_cd(16)
+encode_cd(63)
+encode_cd(222)

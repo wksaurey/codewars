@@ -1,0 +1,12 @@
+def move_zeros(arr):
+    count = arr.count(0)
+    for i in range(count):
+        arr.remove(0)
+        arr.append(0)
+    return arr
+
+# one-liner solution
+# def move_zeros(arr):
+#     return sorted(arr, key=lambda x: x == 0)
+
+print(move_zeros([1, 0, 7, 7, 0, 0, 3]))

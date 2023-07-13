@@ -1,0 +1,16 @@
+def high_and_low(myStr):
+    nums = myStr.split(" ")
+    nums = list(map(toNum, nums))
+    nums.sort(reverse=True)
+    print(nums)
+    min = str(nums[0])
+    max = str(nums[len(nums)-1])
+    result = min + " " + max
+    return result
+
+def toNum(num):
+    return int(num)
+
+print(high_and_low("1 5 3 9"))
+print(high_and_low("8 3 -5 42 -1 0 0 -9 4 7 4 -4"))
+print(high_and_low("1 2 3""1 5 3 9"))

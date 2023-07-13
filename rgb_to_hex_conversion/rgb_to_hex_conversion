@@ -1,0 +1,36 @@
+from math import floor
+def rgb(r, g, b):
+    
+    r = to_base_sixteen(r)
+    g = to_base_sixteen(g)
+    b = to_base_sixteen(b)
+    # print(r + g + b)
+    return r + g + b
+    
+# number between 0 and 255. 
+# Any greater or smaller will be set to the max and min, respectivly
+def to_base_sixteen(num): 
+    if num < 0: num = 0
+    if num > 255: num = 255
+
+    digit_one = floor(num / 16)
+    digit_two = (num % 16)
+
+    # print('digit_one: ' + str(digit_one))
+    # print('digit_two: ' + str(digit_two))
+
+    hex_one = to_hex(digit_one)
+    hex_two = to_hex(digit_two)
+
+    return hex_one + hex_two
+
+def to_hex(num):
+    if num < 0 or num > 15: print('Something went wrong')
+    elif num <= 9 and num >= 0: return str(num)
+    elif num <= 15 and num >= 10: return chr(num + 55)
+
+
+rgb(255, 255, 255) # returns FFFFFF
+rgb(255, 255, 300) # returns FFFFFF
+rgb(0,0,0) # returns 000000
+rgb(148, 0, 211) # returns 9400D3
