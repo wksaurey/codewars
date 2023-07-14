@@ -11,21 +11,24 @@ def get_pins(observed):
         [0, 5, 7, 8, 9], #8
         [6, 8, 9] #9
     ]
-    possibilities = list(map(lambda x: nums[int(x)], str(observed)))
-    get_combos(possibilities, 0, 0, [], '')
-
-    return observed
+    possibilities = list(map(lambda x: nums[int(x)], observed))
+    print(possibilities)
+    return get_combos(possibilities, 0, 0, [], '')
  
 def get_combos(possibilities, digit_index, num_index, results, result):
-    if(len(possibilities[digit_index]) <= num_index): 
-        results.append(int(result))
-        get_combos(possibilities, digit_index+1, 0, results, '')
-    if(len(possibilities) >= digit_index): 
-        return results
+    if(digit_index >= len(possibilities)): 
+        results.append(result)
+    elif(num_index >= len(possibilities[digit_index])): 
+       return results
+    else:
+        result += str(possibilities[digit_index][num_index])
+        get_combos(possibilities, digit_index+1, num_index, results, result)
+        return get_combos(possibilities, digit_index, num_index+1, results, "")
+    
 
 
 
 
-print(get_pins(8))
-print(get_pins(11))
-print(get_pins(253))
+print(get_pins('8'))
+print(get_pins('11'))
+print(get_pins('253'))
