@@ -1,11 +1,14 @@
 def increment_string(strng):
-    i = len(strng)-1
-    if not strng[-1].isdigit():
-        return strng + '1'
-    while strng[i].isdigit():
-        i -= 1
-    i += 1
-    return strng[:i] + str(int(strng[i:])+1)
+    if len(strng) < 1: return '1' 
+    else:
+        i = len(strng) - 1 
+        while True:
+            if i < 0: return str(int(strng) + 1).zfill(len(strng))
+            # find last number
+            if strng[i].isdigit(): i -= 1
+            elif i == len(strng)-1: return strng + '1'
+            else:
+                return strng[:i+1] + str(int(strng[i+1:]) + 1).zfill(len(strng)-i-1)
 
 print(increment_string('hello'))
 print(increment_string('bye1'))
@@ -13,3 +16,7 @@ print(increment_string('foo01'))
 print(increment_string('bar001'))
 print(increment_string('foobar005'))
 print(increment_string('test035'))
+print(increment_string('0'))
+print(increment_string('00'))
+print(increment_string('001'))
+print(increment_string(''))
