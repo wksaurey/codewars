@@ -8,7 +8,7 @@ def increment_string(strng):
             if strng[i].isdigit(): i -= 1
             elif i == len(strng)-1: return strng + '1'
             else:
-                return strng[:i+1] + str(int(strng[i+1:]) + 1).zfill(len(strng)-i-1)
+                return strng[:i+1] + str(int(strng[i+1:]) + 1).zfill(len(strng)-i)
 
 print(increment_string('hello'))
 print(increment_string('bye1'))
