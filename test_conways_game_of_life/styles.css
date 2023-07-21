@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #1f1f1f; /* Dark mode background color */
+  color: #fff; /* Dark mode text color */
+}
+
+.container {
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(35, 20px); /* Make the cells square by setting width and height to 20px */
+  grid-template-rows: repeat(35, 20px);
+  gap: 1px;
+  margin-bottom: 10px;
+}
+
+.cell {
+  width: 20px; /* Width and height are equal to make the cells square */
+  height: 20px;
+  background-color: #333; /* Dark mode cell color */
+}
+
+.cell.alive {
+  background-color: #41b883; /* Dark mode alive cell color */
+}
+
+.buttons button {
+  margin: 5px;
+  background-color: #444; /* Dark mode button background color */
+  color: #fff; /* Dark mode button text color */
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.buttons button:hover {
+  background-color: #666; /* Dark mode button hover background color */
+}
+
