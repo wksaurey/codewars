@@ -1,0 +1,41 @@
+body {
+  background-color: #cccccc;
+}
+
+#sim-parameters {
+  display: grid;
+  justify-self: center;
+}
+
+#container {
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+canvas {
+  margin: 2px;
+  border: 2px solid black;
+}
+
+input[type=number] {
+  margin: 5px;
+  padding: 3px;
+}
+
+button, label {
+  font-weight: bold;
+  border: 3px solid #888888;
+  margin-bottom: 2px;
+  font-weight: normal;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  background: #eeeeee;
+  color: #000000;
+}
+
+#number-group > div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
